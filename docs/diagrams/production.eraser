@@ -1,0 +1,14 @@
+// Eraser cloud-architecture source. Paste into an Eraser diagram (Cloud architecture).
+direction right
+
+Catalog upload [icon: upload]
+Classifier API [icon: fastapi]
+Review queue [icon: inbox]
+Reviewer labels [icon: database]
+Coverage monitor [icon: grafana, label: "Coverage monitor per slice"]
+Recalibration [icon: refresh-cw, label: "Recalibrate T and q"]
+
+Catalog upload > Classifier API
+Classifier API > Review queue: set size > 1
+Review queue > Reviewer labels > Coverage monitor
+Coverage monitor > Recalibration > Classifier API

@@ -1,0 +1,14 @@
+// Eraser flowchart source. Paste into an Eraser diagram (Flow chart).
+direction right
+
+Image [shape: oval, label: "Product image"]
+Embed [shape: rectangle, label: "SigLIP embedding"]
+Scale [shape: rectangle, label: "Logits / temperature, softmax"]
+Set [shape: rectangle, label: "Add classes until mass reaches q"]
+One [shape: diamond, label: "One label in the set?"]
+Auto [shape: oval, label: "Auto-tag"]
+Review [shape: oval, label: "Review: choose from the set"]
+
+Image > Embed > Scale > Set > One
+One > Auto: yes
+One > Review: no
