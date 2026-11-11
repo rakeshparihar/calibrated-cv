@@ -1,0 +1,5 @@
+[
+  {"op": "POST /classify", "file": "scripts/demo_images/watch.png", "pause": 3000},
+  {"op": "POST /classify", "file": "scripts/demo_images/top.png", "pause": 3000},
+  {"op": "POST /classify", "file": "scripts/demo_images/top-2.png", "pause": 3000}
+]

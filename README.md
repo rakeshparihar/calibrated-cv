@@ -2,6 +2,20 @@
 
 A product-image classifier whose confidence means something: temperature scaling, conformal prediction sets, a clear auto-tag-or-review decision, and an evaluation that checks the guarantees per slice rather than assuming them.
 
+## Demo
+
+![Three held-out test images with the label set and decision the API returned for each](docs/img/inputs.png)
+
+![The /classify endpoint on the API's docs page, called with the three images](docs/img/api.gif)
+
+Three held-out test images sent to `POST /classify` (`scripts/demo_images/`), with the trained model at 95% coverage:
+
+- **Watch:** a clear photo. The set holds one label, and it is auto-tagged.
+- **Ambiguous top:** the set holds two labels, so it goes to review.
+- **Top called a T-shirt:** the model is confident and wrong. Coverage of 95% means about 1 set in 20 misses the true label by design, and this is one of them.
+
+The images are lossless copies of the dataset's 60x80 thumbnails; re-encoding them as JPEG was enough to change the borderline answer. Recorded with `scripts/record_docs.mjs` from `scripts/demo_steps.json`.
+
 ## Results
 
 SigLIP (frozen) plus a logistic-regression head over 25 article types; 1,800 training, 600 calibration and 600 test images from a public fashion catalog dataset. Target coverage 95%.
